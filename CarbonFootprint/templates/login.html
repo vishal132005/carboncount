@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        
+        
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #ffffff; /* White background */
+                margin: 0; 
+            }
+        
+            .login {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 300px;
+            }
+        
+            input {
+                width: 100%;
+                padding: 10px;
+                margin: 8px -10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        
+            .home {
+                display: inline-block;
+                margin: 0 -10px;
+                width: 100%;
+                padding: 10px;
+                background: #4CAF50; /* Green background */
+                color: white;
+                text-align: center;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        
+            .home:hover {
+                background: #45a049; /* Darker green when hovered */
+            }
+        
+            .signup {
+                text-decoration: none;
+            }
+        
+            .signup:hover {
+                text-decoration: underline;
+                color: #4CAF50; /* Green underline for signup link */
+            }
+        
+            button {
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                background-color: #4CAF50; /* Green button */
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        
+            button:hover {
+                background-color: #45a049; /* Darker green when hovered */
+            }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>🌍 "Smart Conversations, Greener Decisions – Predict Your Carbon Footprint with AI."   </h3>
+     </nav>
+
+    <div class="login">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+        <h2>Login</h2>
+        <input type="text" id="Username" placeholder="Username",name="username">
+        <input type="password" id="password" placeholder="Password",name="password">
+        {% comment %} <a href="" class="home">Login</a> {% endcomment %}
+        
+        <button type="submit">Submit</button>
+        
+    </form>
+    <a href="{% url "signup" %}" class="signup">Signup</a> 
+        
+    </div>
+
+    
+
+
+
+</body>
+</html>

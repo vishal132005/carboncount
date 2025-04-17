@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbon Footprint Tracker</title>
+  <style>
+    /* Reset + Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      background: url('bgrouemg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      backdrop-filter: blur(2px);
+    }
+    h3{
+      background:black;
+    }
+
+    header {
+      background: rgba(34, 139, 34, 0.9); /* Forest green */
+      width: 100%;
+      padding: 25px 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2em;
+      color: #e0f2f1;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .container p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .main-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .main-links a {
+      padding: 14px 28px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .main-links a:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #43a047, #81c784);
+    }
+
+    .features {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .features h2 {
+      font-size: 1.6em;
+      margin-bottom: 20px;
+      color: #a5d6a7;
+    }
+
+    .features ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .features li {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .features li::before {
+      content: '🌍';
+      margin-right: 10px;
+    }
+
+    footer {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      text-align: center;
+      color: #b2dfdb;
+      margin-top: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .main-links a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Your Carbon Footprint Dashboard</h1>
+  </header>
+  <nav>
+    <h3>🌍 "Smart Conversations, Greener Decisions – Predict Your Carbon Footprint with AI."   </h3>
+ </nav>
+
+  <div class="container">
+    <p>Explore powerful tools to understand and reduce your environmental impact while contributing to a greener future 🌿</p>
+
+    <div class="main-links">
+      <a href="{% url 'chatroom' %}">Ask AI Assistant</a>
+      <a href="{% url "predict_form" %}">Predict Carbon Emission</a>
+    </div>
+
+    <section class="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Personalized Insights:</strong> Understand your carbon footprint based on your lifestyle.</li>
+        <li><strong>AI-Powered Assistance:</strong> Instantly get suggestions and solutions for sustainability.</li>
+        <li><strong>Emission Prediction:</strong> Estimate your environmental impact with accuracy.</li>
+        <li><strong>Actionable Tips:</strong> Practical steps to reduce your carbon emissions.</li>
+        <li><strong>Progress Tracking:</strong> Monitor your improvements and encourage greener habits.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Carbon Footprint Tracker. All rights reserved.</p>
+  </footer>
+</body>
+</html>

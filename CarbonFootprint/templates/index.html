@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Tracker</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2e7d32; /* Green color */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #4caf50; /* Lighter green */
+            padding: 10px 0;
+            width: 80%;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #66bb6a;
+        }
+
+        .hero {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            background-color: #fdd835; /* Yellow accent */
+            color: #333;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #ffe082;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Carbon Footprint Tracker</h1>
+        <p>Track your impact, reduce your footprint, and contribute to a greener future.</p>
+    </header>
+
+    <nav>
+       <h3>🌍 "Smart Conversations, Greener Decisions – Predict Your Carbon Footprint with AI."   </h3>
+    </nav>
+
+    <section class="hero">
+        <h1>Start Tracking Your Environmental Impact Today!</h1>
+        <p>Our platform helps you understand your carbon footprint based on your daily activities. From your food choices to your travel habits, we provide insights into your environmental impact and offer actionable suggestions to help you live more sustainably.</p>
+        <div class="cta-buttons">
+            <h4> Create a Account to get started!  </h4>
+            <a href="{% url "login" %}">Login</a>
+            <a href="{% url "signup" %}">Signup</a>
+            
+        </div>
+    </section>
+
+    <h3>🚀 Predict Your Carbon Emissions with AI
+        Harness the power of Artificial Intelligence to estimate your carbon footprint based on your lifestyle choices. Get instant insights, track your impact, and take smarter steps toward a sustainable future.</h3>
+
+    <footer>
+        <p>&copy; 2025 Carbon Footprint Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatBot Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e5ddd5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            height: 90vh;
+            margin: 20px auto;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #075e54;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f0f0f0;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 8px;
+            clear: both;
+            position: relative;
+        }
+
+        .message strong {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .user {
+            background-color: #dcf8c6;
+            float: right;
+            text-align: right;
+        }
+
+        .ai {
+            background-color: #ffffff;
+            float: left;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .chat-input {
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        .chat-input form {
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #075e54;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #0a766b;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url "delete" %}" class="signup">delete</a> 
+<div class="chat-container">
+    <div class="chat-header">
+        ChatBot Room
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        {% for message in messages %}
+            <div class="message {{ message.sender }}">
+                <strong>
+                    {% if message.sender == "user" %}
+                        You
+                    {% elif message.sender == "ai" %}
+                        AI
+                    {% else %}
+                        {{ message.sender }}
+                    {% endif %}
+                </strong>
+                {{ message.message }}
+            </div>
+        {% empty %}
+            <p style="text-align: center; color: #888;">No messages yet.</p>
+        {% endfor %}
+    </div>
+
+    <div class="chat-input">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="user_input" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Optional: Auto-scroll to the latest message
+    const chatMessages = document.getElementById("chatMessages");
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+</script>
+
+</body>
+</html>

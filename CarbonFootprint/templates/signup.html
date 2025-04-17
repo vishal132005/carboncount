@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('bgrouemg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      backdrop-filter: blur(3px);
+    }
+
+    .signup {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      color: white;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .signup h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #a5d6a7;
+    }
+
+    .input {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .input label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95em;
+      color: #dcedc8;
+    }
+
+    .input input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: rgba(255, 255, 255, 0.9);
+      outline: none;
+    }
+
+    .input input:focus {
+      border: 2px solid #81c784;
+      box-shadow: 0 0 8px rgba(129, 199, 132, 0.8);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #43a047, #81c784);
+      transform: translateY(-2px);
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 0.95em;
+      color: #b2dfdb;
+    }
+
+    a {
+      color: #e0f2f1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .signup {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup">
+    <h2>Sign Up</h2>
+    <nav>
+        <h3>🌍 "Smart Conversations, Greener Decisions – Predict Your Carbon Footprint with AI."   </h3>
+     </nav>
+    <form action="{% url 'signup' %}" method="POST">
+      {% csrf_token %}
+      <div class="input">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="input">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="input">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+  </div>
+</body>
+</html>
